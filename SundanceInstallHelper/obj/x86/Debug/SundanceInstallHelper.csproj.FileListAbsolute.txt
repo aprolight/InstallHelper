@@ -1,0 +1,16 @@
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\bin\x86\Debug\SundanceInstallHelper.exe
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\bin\x86\Debug\SundanceInstallHelper.pdb
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\x86\Debug\SundanceInstallHelper.exe
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\x86\Debug\SundanceInstallHelper.pdb
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\x86\Debug\SundanceInstallHelper.OEMImages.ABUDHABIMCC.ABUDHABIMCCResource.resources
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\x86\Debug\SundanceInstallHelper.OEMImages.Common.CommonResource.resources
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\x86\Debug\SundanceInstallHelper.OEMImages.INCON.INCONResource.resources
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\x86\Debug\SundanceInstallHelper.OEMImages.SKCC.SKCCResource.resources
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\x86\Debug\SundanceInstallHelper.OEMImages.TMAIRPORT.TMAIRPORTResource.resources
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\x86\Debug\SundanceInstallHelper.OEMImages.TMOLYMPIC.TMOLYMPICResource.resources
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\x86\Debug\SundanceInstallHelper.OEMImages.TMSAFECITY.TMSAFECITYResource.resources
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\x86\Debug\SundanceInstallHelper.OEMImages.TURKMENISTAN.TURKMENISTANResource.resources
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\x86\Debug\SundanceInstallHelper.Properties.Resources.resources
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\x86\Debug\SundanceInstallHelper.csproj.GenerateResource.Cache
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\x86\Debug\SundanceInstallHelper.csprojResolveAssemblyReference.cache
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\x86\Debug\SundanceInstallHelper.csproj.CoreCompileInputs.cache

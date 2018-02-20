@@ -1,0 +1,990 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{72403D1E-272E-4DEB-9969-392668C8CCCF}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SundanceInstallHelper</RootNamespace>
+    <AssemblyName>SundanceInstallHelper</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\AppConfigurationHelper.cs" />
+    <Compile Include="Common\FileIcon.cs" />
+    <Compile Include="Common\GenericLogger.cs" />
+    <Compile Include="Common\LogFilterOption.cs" />
+    <Compile Include="Common\LogWriter.cs" />
+    <Compile Include="Common\ShellLink.cs" />
+    <Compile Include="Common\ObjectItems.cs" />
+    <Compile Include="Common\Win32.cs" />
+    <Compile Include="LocalClientSetting.cs" />
+    <Compile Include="MainWorker.Command.cs">
+      <DependentUpon>MainWorker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWorker.cs" />
+    <Compile Include="MainWorker.Resources.cs">
+      <DependentUpon>MainWorker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWorker.Skin.cs">
+      <DependentUpon>MainWorker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OEMImages\ABUDHABIMCC\ABUDHABIMCCResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ABUDHABIMCCResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="OEMImages\Common\CommonResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommonResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="OEMImages\INCON\INCONResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INCONResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="OEMImages\SKCC\SKCCResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SKCCResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="OEMImages\TMAIRPORT\TMAIRPORTResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TMAIRPORTResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="OEMImages\TMOLYMPIC\TMOLYMPICResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TMOLYMPICResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="OEMImages\TMSAFECITY\TMSAFECITYResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TMSAFECITYResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="OEMImages\TURKMENISTAN\TURKMENISTANResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TURKMENISTANResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Common\Utilities.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="OEMImages\ABUDHABIMCC\ABUDHABIMCCResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ABUDHABIMCCResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OEMImages\Common\CommonResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommonResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OEMImages\INCON\INCONResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>INCONResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OEMImages\SKCC\SKCCResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SKCCResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OEMImages\TMAIRPORT\TMAIRPORTResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TMAIRPORTResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OEMImages\TMOLYMPIC\TMOLYMPICResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TMOLYMPICResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OEMImages\TMSAFECITY\TMSAFECITYResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TMSAFECITYResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OEMImages\TURKMENISTAN\TURKMENISTANResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TURKMENISTANResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\AboutLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\AdminToolSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\AdminToolSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\ApplicationIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\ApplicationIcon_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\ApplicationIcon_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\Config_Top_Extend.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\ConfigManagerSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\ConfigManagerSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\DisplayControl_NoSignal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\DisplayControl_RecognitionTile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\DisplayControl_TileBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\DisplayControl_VideoLoading.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\GISClientSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\GISClientSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\GISMapSplahScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\GISMapSplahScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\LiveAlarmPlayback_BackgroundImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\ProductLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\RecognitionAdminToolSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\RemoteClientSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\RemoteClientSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\SplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\SplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\Sundance_Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\Sundance_Logo_Long.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\Uninstall_BG_top.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\Wizard_BG_left.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\Wizard_BG_left_tile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\ABUDHABIMCC\Wizard_BG_top.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_Audio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_AudioBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_AudioRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_Camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_Camera_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_Camera_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_Camera_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_Camera_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_CameraBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_CameraBlue_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_CameraBlue_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_CameraBlue_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_CameraRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_CameraRed_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_CameraRed_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_CameraRed_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_Maplink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_Relay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_Relay_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_Relay_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_Relay_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_Relay_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_RelayBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_RelayBlue_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_RelayBlue_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_RelayBlue_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_RelayBlue_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_RelayRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_RelayRed_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_RelayRed_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_RelayRed_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_RelayRed_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_Sensor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_SensorBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_SensorRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\Common\Map_VideoServer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\AboutLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\AdminToolSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\AdminToolSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\ApplicationIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\ApplicationIcon_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\ApplicationIcon_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\Config_Top_Extend.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\ConfigManagerSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\ConfigManagerSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\DisplayControl_NoSignal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\DisplayControl_RecognitionTile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\DisplayControl_TileBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\DisplayControl_VideoLoading.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\GISClientSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\GISClientSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\GISMapSplahScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\GISMapSplahScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\LiveAlarmPlayback_BackgroundImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\ProductLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\RecognitionAdminToolSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\RemoteClientSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\RemoteClientSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\SplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\SplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\Sundance_Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\Sundance_Logo_Long.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\Uninstall_BG_top.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\Wizard_BG_left.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\Wizard_BG_left_tile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMAIRPORT\Wizard_BG_top.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\AboutLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\AdminToolSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\AdminToolSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\ApplicationIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\ApplicationIcon_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\ApplicationIcon_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\Config_Top_Extend.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\ConfigManagerSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\ConfigManagerSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\DisplayControl_NoSignal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\DisplayControl_RecognitionTile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\DisplayControl_TileBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\DisplayControl_VideoLoading.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\GISClientSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\GISClientSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\GISMapSplahScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\GISMapSplahScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\LiveAlarmPlayback_BackgroundImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\ProductLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\RecognitionAdminToolSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\RemoteClientSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\RemoteClientSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\SplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\SplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\Sundance_Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\Sundance_Logo_Long.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\Uninstall_BG_top.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\Wizard_BG_left.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\Wizard_BG_left_tile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMOLYMPIC\Wizard_BG_top.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\AboutLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\AdminToolSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\AdminToolSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\ApplicationIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\ApplicationIcon_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\ApplicationIcon_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\Config_Top_Extend.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\ConfigManagerSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\ConfigManagerSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\DisplayControl_NoSignal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\DisplayControl_RecognitionTile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\DisplayControl_TileBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\DisplayControl_VideoLoading.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\GISClientSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\GISClientSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\GISMapSplahScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\GISMapSplahScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\LiveAlarmPlayback_BackgroundImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\ProductLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\RecognitionAdminToolSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\RemoteClientSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\RemoteClientSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\SplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\SplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\Sundance_Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\Sundance_Logo_Long.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\Uninstall_BG_top.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\Wizard_BG_left.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\Wizard_BG_left_tile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TURKMENISTAN\Wizard_BG_top.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\AboutLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\AdminToolSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\AdminToolSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\ApplicationIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\ApplicationIcon_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\ApplicationIcon_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\Config_Top_Extend.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\ConfigManagerSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\ConfigManagerSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\DisplayControl_NoSignal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\DisplayControl_RecognitionTile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\DisplayControl_TileBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\DisplayControl_VideoLoading.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\GISClientSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\GISClientSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\GISMapSplahScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\GISMapSplahScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\LiveAlarmPlayback_BackgroundImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\ProductLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\RecognitionAdminToolSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\RemoteClientSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\RemoteClientSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\SplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\SplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\Sundance_Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\Sundance_Logo_Long.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\Uninstall_BG_top.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\Wizard_BG_left.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\Wizard_BG_left_tile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\TMSAFECITY\Wizard_BG_top.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\AboutLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\AdminToolSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\AdminToolSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\ApplicationIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\ApplicationIcon_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\ApplicationIcon_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\Config_Top_Extend.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\ConfigManagerSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\ConfigManagerSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\DisplayControl_NoSignal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\DisplayControl_RecognitionTile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\DisplayControl_TileBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\DisplayControl_VideoLoading.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\GISClientSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\GISClientSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\GISMapSplahScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\GISMapSplahScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\LiveAlarmPlayback_BackgroundImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\ProductLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\RecognitionAdminToolSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\RemoteClientSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\RemoteClientSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\SplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\SplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\Sundance_Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\Sundance_Logo_Long.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\Uninstall_BG_top.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\Wizard_BG_left.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\Wizard_BG_left_tile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\SKCC\Wizard_BG_top.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\INCON\AboutLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\INCON\AdminToolSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\INCON\AdminToolSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\INCON\ApplicationIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\INCON\ApplicationIcon_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\INCON\ApplicationIcon_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\INCON\Config_Top_Extend.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\INCON\ConfigManagerSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\INCON\ConfigManagerSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\INCON\DisplayControl_NoSignal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\INCON\DisplayControl_RecognitionTile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\INCON\DisplayControl_TileBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\INCON\DisplayControl_VideoLoading.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\INCON\GISClientSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\INCON\GISClientSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\INCON\GISMapSplahScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\INCON\GISMapSplahScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\INCON\LiveAlarmPlayback_BackgroundImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\INCON\ProductLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\INCON\RecognitionAdminToolSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\INCON\RemoteClientSplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\INCON\RemoteClientSplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\INCON\SplashScreen_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\INCON\SplashScreen_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OEMImages\INCON\Sundance_Logo.png" />
+    <None Include="Service_Data.ini" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Manual.txt" />
+    <None Include="OEMImages\INCON\Sundance_Logo_4.png" />
+    <None Include="OEMImages\INCON\SplashScreen_Top_4.png" />
+    <None Include="OEMImages\INCON\SplashScreen_Bottom_4.png" />
+    <None Include="OEMImages\INCON\RemoteClientSplashScreen_Top_4.png" />
+    <None Include="OEMImages\INCON\RemoteClientSplashScreen_Bottom_4.png" />
+    <None Include="OEMImages\INCON\RecognitionAdminToolSplashScreen_Top_4.png" />
+    <None Include="OEMImages\INCON\ProductLogo_4.png" />
+    <None Include="OEMImages\INCON\LiveAlarmPlayback_BackgroundImage_4.png" />
+    <None Include="OEMImages\INCON\GISMapSplahScreen_Top_4.png" />
+    <None Include="OEMImages\INCON\GISMapSplahScreen_Bottom_4.png" />
+    <None Include="OEMImages\INCON\GISClientSplashScreen_Top_4.png" />
+    <None Include="OEMImages\INCON\GISClientSplashScreen_Bottom_4.png" />
+    <None Include="OEMImages\INCON\DisplayControl_VideoLoading_4.jpg" />
+    <None Include="OEMImages\INCON\DisplayControl_TileBackground_4.jpg" />
+    <None Include="OEMImages\INCON\DisplayControl_RecognitionTile_4.jpg" />
+    <None Include="OEMImages\INCON\DisplayControl_NoSignal_4.jpg" />
+    <None Include="OEMImages\INCON\ConfigManagerSplashScreen_Top_4.png" />
+    <None Include="OEMImages\INCON\ConfigManagerSplashScreen_Bottom_4.png" />
+    <None Include="OEMImages\INCON\Config_Top_Extend_4.png" />
+    <None Include="OEMImages\INCON\AdminToolSplashScreen_Top_4.png" />
+    <None Include="OEMImages\INCON\AdminToolSplashScreen_Bottom_4.png" />
+    <None Include="OEMImages\INCON\AboutLogo_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="OEMImages\EMBASSY\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

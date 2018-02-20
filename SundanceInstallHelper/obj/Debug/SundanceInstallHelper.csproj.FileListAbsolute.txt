@@ -1,0 +1,5 @@
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\bin\Debug\SundanceInstallHelper.exe
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\bin\Debug\SundanceInstallHelper.pdb
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\Debug\ResolveAssemblyReference.cache
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\Debug\SundanceInstallHelper.exe
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\Debug\SundanceInstallHelper.pdb

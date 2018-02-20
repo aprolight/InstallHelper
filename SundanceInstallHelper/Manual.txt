@@ -1,0 +1,35 @@
+﻿01. Help 또는 ?
+ : 프로그램 Command 확인
+02. INFO
+ : 시스템 정보 확인
+03. SETTING
+ : OEM Code 확인 - Service_Data.ini
+04. MANUAL
+ : Manual.txt 확인
+05. INSTALL
+ : 레지스트리 등록
+ : 스킨 등록 및 리소스 업데이트
+ : OEM Code 업데이트 Service_Data.ini
+ : Product.ini 업데이트
+ : InstallSundance 실행
+06. UNINSTALL
+ : TaskKill
+ : 레지스트리 제거
+ : 리소스 파일 제거
+07. SERVICE START/STOP/RESTART
+ : VMS 서비스 시작/중지/재실행
+08. REG
+ : 레지스트리 등록
+09. UNREG
+ : 레지스트리 제거
+10. TASKKILL
+ : 관련 파일 모두 Kill
+11. SHORCUTSERVER
+ : 서비스 바탕화면 생성
+12. GETSKIN
+ : 현재 스킨 정보
+13. SETSKIN 1~5
+ (1: Metropolis Dark_Black,   2: Metropolis Dark_Default)
+ (3: Metropolis Dark_Gray,    4: Metropolis Dark_Green)
+ (5: Metropolis Dark_NVR)
+ : 스킨 설정

@@ -1,0 +1,15 @@
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\bin\x86\Release\SundanceInstallHelper.exe
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\bin\x86\Release\SundanceInstallHelper.pdb
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\x86\Release\ResolveAssemblyReference.cache
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\x86\Release\SundanceInstallHelper.OEMImages.ABUDHABIMCC.ABUDHABIMCCResource.resources
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\x86\Release\SundanceInstallHelper.OEMImages.Common.CommonResource.resources
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\x86\Release\SundanceInstallHelper.OEMImages.INCON.INCONResource.resources
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\x86\Release\SundanceInstallHelper.OEMImages.SKCC.SKCCResource.resources
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\x86\Release\SundanceInstallHelper.OEMImages.TMAIRPORT.TMAIRPORTResource.resources
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\x86\Release\SundanceInstallHelper.OEMImages.TMOLYMPIC.TMOLYMPICResource.resources
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\x86\Release\SundanceInstallHelper.OEMImages.TMSAFECITY.TMSAFECITYResource.resources
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\x86\Release\SundanceInstallHelper.OEMImages.TURKMENISTAN.TURKMENISTANResource.resources
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\x86\Release\SundanceInstallHelper.Properties.Resources.resources
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\x86\Release\SundanceInstallHelper.csproj.GenerateResource.Cache
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\x86\Release\SundanceInstallHelper.exe
+D:\Project\C#\TestProgram\SundanceInstallHelper\SundanceInstallHelper\obj\x86\Release\SundanceInstallHelper.pdb

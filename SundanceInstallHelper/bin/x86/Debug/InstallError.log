@@ -1,0 +1,43 @@
+System.Data.SqlClient.SqlException: 데이터베이스 'NewVMS'이(가) 이미 있습니다. 다른 데이터베이스 이름을 선택하십시오.
+데이터베이스 컨텍스트가 'master'(으)로 변경되었습니다.
+   위치: Sundance.Support.DBConfig.SqlExecutor.ExecuteSql(DbConnection connection, String sqlText, Boolean useTransactions, Boolean ignoreErrors, Int32 timeout) 파일 D:\Project\C#\SundanceRev_VMS\Support\Sundance.Support.DBConfig\SqlExecutor.cs:줄 101
+   위치: Sundance.Support.DBConfig.PublicAPI.CreateDatabase(String connString, String dbName) 파일 D:\Project\C#\SundanceRev_VMS\Support\Sundance.Support.DBConfig\PublicAPI.cs:줄 291
+   위치: Sundance.Support.DBConfig.DbInstaller.CreateDB() 파일 D:\Project\C#\SundanceRev_VMS\Support\Sundance.Support.DBConfig\DbInstaller.cs:줄 487System.Data.SqlClient.SqlException: PRIMARY KEY 제약 조건 'ResourceTexts_PK'을(를) 위반했습니다. 개체 'dbo.ResourceTexts'에 중복 키를 삽입할 수 없습니다. 중복 키 값은 (551)입니다.
+PRIMARY KEY 제약 조건 'ResourceTexts_PK'을(를) 위반했습니다. 개체 'dbo.ResourceTexts'에 중복 키를 삽입할 수 없습니다. 중복 키 값은 (552)입니다.
+문이 종료되었습니다.
+문이 종료되었습니다.
+   위치: Sundance.Support.DBConfig.SqlExecutor.ExecuteSql(DbConnection connection, String sqlText, Boolean useTransactions, Boolean ignoreErrors, Int32 timeout) 파일 D:\Project\C#\SundanceRev_VMS\Support\Sundance.Support.DBConfig\SqlExecutor.cs:줄 101
+   위치: Sundance.Support.DBConfig.SqlExecutor.ExecuteSqlFile(DbConnection connection, String sqlFile, Boolean ignoreErrors, Int32 timeout) 파일 D:\Project\C#\SundanceRev_VMS\Support\Sundance.Support.DBConfig\SqlExecutor.cs:줄 18
+   위치: Sundance.Support.DBConfig.PublicAPI.InitializeDB(IDBTaskOwner taskOwner, String databaseName, String ddlSchemaFile, String ddlCodeFile, String sundanceConnString, String dataFile, String staticDataFile, String dropObjectsFile, Boolean ignoreErrors, Boolean isNewDB) 파일 D:\Project\C#\SundanceRev_VMS\Support\Sundance.Support.DBConfig\PublicAPI.cs:줄 179System.Data.SqlClient.SqlException: 데이터베이스 'NewVMS'이(가) 이미 있습니다. 다른 데이터베이스 이름을 선택하십시오.
+데이터베이스 컨텍스트가 'master'(으)로 변경되었습니다.
+   위치: Sundance.Support.DBConfig.SqlExecutor.ExecuteSql(DbConnection connection, String sqlText, Boolean useTransactions, Boolean ignoreErrors, Int32 timeout) 파일 D:\Project\C#\SundanceRev_VMS\Support\Sundance.Support.DBConfig\SqlExecutor.cs:줄 101
+   위치: Sundance.Support.DBConfig.PublicAPI.CreateDatabase(String connString, String dbName) 파일 D:\Project\C#\SundanceRev_VMS\Support\Sundance.Support.DBConfig\PublicAPI.cs:줄 291
+   위치: Sundance.Support.DBConfig.DbInstaller.CreateDB() 파일 D:\Project\C#\SundanceRev_VMS\Support\Sundance.Support.DBConfig\DbInstaller.cs:줄 487System.Data.SqlClient.SqlException: PRIMARY KEY 제약 조건 'ResourceTexts_PK'을(를) 위반했습니다. 개체 'dbo.ResourceTexts'에 중복 키를 삽입할 수 없습니다. 중복 키 값은 (551)입니다.
+PRIMARY KEY 제약 조건 'ResourceTexts_PK'을(를) 위반했습니다. 개체 'dbo.ResourceTexts'에 중복 키를 삽입할 수 없습니다. 중복 키 값은 (552)입니다.
+문이 종료되었습니다.
+문이 종료되었습니다.
+   위치: Sundance.Support.DBConfig.SqlExecutor.ExecuteSql(DbConnection connection, String sqlText, Boolean useTransactions, Boolean ignoreErrors, Int32 timeout) 파일 D:\Project\C#\SundanceRev_VMS\Support\Sundance.Support.DBConfig\SqlExecutor.cs:줄 101
+   위치: Sundance.Support.DBConfig.SqlExecutor.ExecuteSqlFile(DbConnection connection, String sqlFile, Boolean ignoreErrors, Int32 timeout) 파일 D:\Project\C#\SundanceRev_VMS\Support\Sundance.Support.DBConfig\SqlExecutor.cs:줄 18
+   위치: Sundance.Support.DBConfig.PublicAPI.InitializeDB(IDBTaskOwner taskOwner, String databaseName, String ddlSchemaFile, String ddlCodeFile, String sundanceConnString, String dataFile, String staticDataFile, String dropObjectsFile, Boolean ignoreErrors, Boolean isNewDB) 파일 D:\Project\C#\SundanceRev_VMS\Support\Sundance.Support.DBConfig\PublicAPI.cs:줄 179System.Data.SqlClient.SqlException: 데이터베이스 'NewVMS'이(가) 이미 있습니다. 다른 데이터베이스 이름을 선택하십시오.
+데이터베이스 컨텍스트가 'master'(으)로 변경되었습니다.
+   위치: Sundance.Support.DBConfig.SqlExecutor.ExecuteSql(DbConnection connection, String sqlText, Boolean useTransactions, Boolean ignoreErrors, Int32 timeout) 파일 D:\Project\C#\SundanceRev_VMS\Support\Sundance.Support.DBConfig\SqlExecutor.cs:줄 101
+   위치: Sundance.Support.DBConfig.PublicAPI.CreateDatabase(String connString, String dbName) 파일 D:\Project\C#\SundanceRev_VMS\Support\Sundance.Support.DBConfig\PublicAPI.cs:줄 291
+   위치: Sundance.Support.DBConfig.DbInstaller.CreateDB() 파일 D:\Project\C#\SundanceRev_VMS\Support\Sundance.Support.DBConfig\DbInstaller.cs:줄 487System.Data.SqlClient.SqlException: 데이터베이스 'NewVMS'이(가) 이미 있습니다. 다른 데이터베이스 이름을 선택하십시오.
+데이터베이스 컨텍스트가 'master'(으)로 변경되었습니다.
+   위치: Sundance.Support.DBConfig.SqlExecutor.ExecuteSql(DbConnection connection, String sqlText, Boolean useTransactions, Boolean ignoreErrors, Int32 timeout) 파일 D:\Project\C#\SundanceRev_VMS\Support\Sundance.Support.DBConfig\SqlExecutor.cs:줄 103
+   위치: Sundance.Support.DBConfig.PublicAPI.CreateDatabase(String connString, String dbName) 파일 D:\Project\C#\SundanceRev_VMS\Support\Sundance.Support.DBConfig\PublicAPI.cs:줄 291
+   위치: Sundance.Support.DBConfig.DbInstaller.CreateDB() 파일 D:\Project\C#\SundanceRev_VMS\Support\Sundance.Support.DBConfig\DbInstaller.cs:줄 487System.Data.SqlClient.SqlException: PRIMARY KEY 제약 조건 'ResourceTexts_PK'을(를) 위반했습니다. 개체 'dbo.ResourceTexts'에 중복 키를 삽입할 수 없습니다. 중복 키 값은 (551)입니다.
+PRIMARY KEY 제약 조건 'ResourceTexts_PK'을(를) 위반했습니다. 개체 'dbo.ResourceTexts'에 중복 키를 삽입할 수 없습니다. 중복 키 값은 (552)입니다.
+문이 종료되었습니다.
+문이 종료되었습니다.
+   위치: Sundance.Support.DBConfig.SqlExecutor.ExecuteSql(DbConnection connection, String sqlText, Boolean useTransactions, Boolean ignoreErrors, Int32 timeout)
+   위치: Sundance.Support.DBConfig.SqlExecutor.ExecuteSqlFile(DbConnection connection, String sqlFile, Boolean ignoreErrors, Int32 timeout)
+   위치: Sundance.Support.DBConfig.PublicAPI.InitializeDB(IDBTaskOwner taskOwner, String databaseName, String ddlSchemaFile, String ddlCodeFile, String sundanceConnString, String dataFile, String staticDataFile, String dropObjectsFile, Boolean ignoreErrors, Boolean isNewDB)System.Data.SqlClient.SqlException: 데이터베이스 'NewVMS'이(가) 이미 있습니다. 다른 데이터베이스 이름을 선택하십시오.
+데이터베이스 컨텍스트가 'master'(으)로 변경되었습니다.
+   위치: Sundance.Support.DBConfig.SqlExecutor.ExecuteSql(DbConnection connection, String sqlText, Boolean useTransactions, Boolean ignoreErrors, Int32 timeout)
+   위치: Sundance.Support.DBConfig.PublicAPI.CreateDatabase(String connString, String dbName)
+   위치: Sundance.Support.DBConfig.DbInstaller.CreateDB()System.Data.SqlClient.SqlException: 데이터베이스 'NewVMS'이(가) 이미 있습니다. 다른 데이터베이스 이름을 선택하십시오.
+데이터베이스 컨텍스트가 'master'(으)로 변경되었습니다.
+   위치: Sundance.Support.DBConfig.SqlExecutor.ExecuteSql(DbConnection connection, String sqlText, Boolean useTransactions, Boolean ignoreErrors, Int32 timeout) 파일 D:\Project\C#\SundanceRev_VMS\Support\Sundance.Support.DBConfig\SqlExecutor.cs:줄 107
+   위치: Sundance.Support.DBConfig.PublicAPI.CreateDatabase(String connString, String dbName) 파일 D:\Project\C#\SundanceRev_VMS\Support\Sundance.Support.DBConfig\PublicAPI.cs:줄 291
+   위치: Sundance.Support.DBConfig.DbInstaller.CreateDB() 파일 D:\Project\C#\SundanceRev_VMS\Support\Sundance.Support.DBConfig\DbInstaller.cs:줄 487
